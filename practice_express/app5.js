@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-app.use('/public',static(path.join(__dirname, 'public')));
+app.use(static(path.join(__dirname, 'public'))); // 여기서 폴더를 미리 지정해줌
 
 app.use(function(req, res, next){
     console.log('첫 번째 미들웨어에서 요청을 처리함');
