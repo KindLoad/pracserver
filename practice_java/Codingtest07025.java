@@ -5,14 +5,17 @@ public class Codingtest07025 {
     class Solution {
         public int solution(int num) {
             int cnt = 0;
+            long temp = num;
             
-            while(num != 1 || cnt < 500){
-                if(num%2 == 0){
-                    num /=2;
+            while(cnt < 500){
+                if(temp%2 == 0){
+                    temp /=2;
                 }
-                else
-                    num = num*3+1;
+                else temp = temp*3+1;
                 cnt++;
+
+                if(temp == 1)
+                    break;
             }
     
             return (cnt >= 500) ? -1 : cnt;
