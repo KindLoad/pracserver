@@ -1,19 +1,18 @@
 package practice_java;
 
-class Codingtest07021{
+class Codingtest07022{
     public static void main(String[] args) {
         
     }
 
     class Solution {
-        public int[] solution(long n) {
-            int[] answer;
+        public int solution(int n) {
+            int answer = 0;
             String temp = n + "";
-            answer = new int[temp.length()];
             for(int i = 0 ; i < temp.length() ; i++){
-                answer[i] = Integer.parseInt(""+temp.charAt(temp.length()-i-1));
+                answer += Integer.parseInt(temp.charAt(i) + "");
             }
-            
+    
             return answer;
         }
     }
