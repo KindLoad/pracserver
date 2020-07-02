@@ -14,21 +14,14 @@ public class Codingtest07023 {
                 answer = new int[arr.length-1];
                 int min = arr[0];
                 int min_index = 0;
-                int j = 0;
                 for(int i = 1 ; i < arr.length ; i++){
                     if(arr[i] < min){
                         min = arr[i];
                         min_index = i;
                     }
                 }
-                for(int i = 0 ; i < answer.length ; i++){
-                    if(arr[i] == arr[min_index]){
-                        j++;
-                        continue;
-                    }
-                    answer[i] = arr[j];
-                    j++;
-                }
+                System.arraycopy(arr, 0, answer, 0, min_index);
+                System.arraycopy(arr, min_index+1, answer, min_index, arr.length - min_index - 1);
             }
             return answer;
         }
